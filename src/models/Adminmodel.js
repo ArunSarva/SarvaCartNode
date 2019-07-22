@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
  
 const Schema = mongoose.Schema
  
-const User = new Schema({
+const Admin = new Schema({
     Name: {
         type: String,
         required: 'First Name required'
@@ -20,4 +20,4 @@ const User = new Schema({
     }
 })
  
-export default User;
+export default Admin;
