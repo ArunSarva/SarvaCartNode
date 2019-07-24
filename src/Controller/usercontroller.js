@@ -30,7 +30,7 @@ exports.Login=(req, res)=> {
           });
         }
 exports.userSignup = function(req, res){
-    console.log("hii sign up");
+    console.log(req);
     User.find({Email: req.body.Email},function(err, data){
         if(data != null && data != ''){
         res.send('User already exists');
@@ -48,6 +48,7 @@ exports.userSignup = function(req, res){
                 res.json(data);
             })
             }
+            // console.log(reg.test(req.body.Password)
         }
     });
     };

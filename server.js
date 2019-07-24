@@ -2,9 +2,12 @@ import express from 'express';
 import routes from './src/route/userroute'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
+var cors = require('cors');
  
 const app = express()
 const PORT = 8000
+app.use(cors());
+
  
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/SarvaCart')
