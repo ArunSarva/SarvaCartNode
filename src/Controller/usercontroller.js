@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
 import Usermodel from '../models/usermodel'
+import Productmodels from '../models/Productmodels'
 const Cryptr = require('cryptr');
 const bcrypt = require('bcrypt'); 
 const cryptr = new Cryptr('myTotalySecretKey');
-const User = mongoose.model('User', Usermodel)
+const User = mongoose.model('User', Usermodel);
+const Product = mongoose.model('Product', Productmodels)
 var validator = require("email-validator");
 
 
@@ -16,7 +18,7 @@ exports.Login=(req, res)=> {
         if(data != null && data != ''){
            const pass= cryptr.decrypt(data[0].Password);
         //    console.log("dcrypt"+pass)
-           console.log(pass,data[0].Password)
+           console.log(pass,req.body.Password)
                 if(pass == req.body.Password){
                   res.json("Login Successful");
                   console.log("hello")
@@ -52,3 +54,12 @@ exports.userSignup = function(req, res){
         }
     });
     };
+    exports.Addproduct=(req, res)=> {
+      console.log("hii product");
+                var userData = new Product(req.body);
+                userData.save(function(err, data){
+                if(err)
+                res.send(err.message);
+                res.json(data);
+            })
+            }

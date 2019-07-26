@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { pathToFileURL } from 'url';
+// import { pathToFileURL } from 'url';
  
 const Schema = mongoose.Schema
  
@@ -18,11 +18,7 @@ const Product = new Schema({
     },
     Product_Discription: {
         type: String
-    },
-    Product_image:{
-        type:String,
-        required:"Image required"
-    }    
+    }  
 })
  
-export default User;
+export default Product;
