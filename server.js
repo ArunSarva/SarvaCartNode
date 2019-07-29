@@ -1,5 +1,5 @@
 import express from 'express';
-import routes from './src/route/userroute'
+import routes from './src/route/route'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 var cors = require('cors');
