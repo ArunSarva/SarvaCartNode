@@ -11,3 +11,12 @@ exports.AddCart=(req, res)=> {
               res.json(data);
           })
           }
+
+exports.getCart=(req, res)=> {
+    console.log("get hi")
+    let newCart = new Cart(req.body)
+    Cart.find({}, (error, data) => {
+        if (error) { res.json(error) }
+        res.json(data)
+    })
+    }
