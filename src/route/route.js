@@ -1,6 +1,6 @@
 import { Login,userSignup,Addproduct } from '../Controller/usercontroller'
 import { AdminLogin,AdminSignup } from '../Controller/Admincontroller'
-import {AddCart,getCart} from '../Controller/Cartcontroller'
+import {AddCart,getCart,deletecart} from '../Controller/Cartcontroller'
 const routes = (app) => {
 // to user registor
 app.route('/signup')
@@ -25,6 +25,9 @@ app.route('/AddCart')
 //get cart
 app.route('/Getcart')
     .get(getCart)
+
+app.route('/deletecart/:id')
+.delete(deletecart)
     }
 
 export default routes
