@@ -54,12 +54,12 @@ exports.userSignup = function(req, res){
         }
     });
     };
-    exports.Addproduct=(req, res)=> {
-      console.log("hii product");
-                var userData = new Product(req.body);
-                userData.save(function(err, data){
-                if(err)
-                res.send(err.message);
-                res.json(data);
-            })
-            }
+    // exports.Addproduct=(req, res)=> {
+    //   console.log("hii product");
+    //             var userData = new Product(req.body);
+    //             userData.save(function(err, data){
+    //             if(err)
+    //             res.send(err.message);
+    //             res.json(data);
+    //         })
+    //         }
