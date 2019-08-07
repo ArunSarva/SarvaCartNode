@@ -2,6 +2,7 @@ import { Login,userSignup } from '../Controller/usercontroller'
 import { AdminLogin,AdminSignup } from '../Controller/Admincontroller'
 import {AddCart,getCart,deletecart,updateCart} from '../Controller/Cartcontroller'
 import {Addproduct,Getproduct} from '../Controller/Productcontroller'
+import {Addorder,Getorder,Deliver} from '../Controller/Ordercontroller'
 const routes = (app) => {
 // to user registor
 app.route('/signup')
@@ -38,6 +39,17 @@ app.route('/deletecart/:id')
 //update cart
 app.route('/updateCart/:id')
 .put(updateCart)
-    }
+    
+//add order
+app.route('/Addorder')
+.post(Addorder)
 
+//get order
+app.route('/Getorder')
+.get(Getorder)
+
+//
+app.route('/Deliver/:id')
+.delete(Deliver)
+}
 export default routes

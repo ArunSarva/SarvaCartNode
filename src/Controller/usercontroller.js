@@ -50,16 +50,7 @@ exports.userSignup = function(req, res){
                 res.json(data);
             })
             }
-            // console.log(reg.test(req.body.Password)
         }
     });
     };
-    // exports.Addproduct=(req, res)=> {
-    //   console.log("hii product");
-    //             var userData = new Product(req.body);
-    //             userData.save(function(err, data){
-    //             if(err)
-    //             res.send(err.message);
-    //             res.json(data);
-    //         })
-    //         }
+   
