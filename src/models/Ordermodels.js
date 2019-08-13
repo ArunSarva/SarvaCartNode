@@ -13,10 +13,10 @@ const Order = new Schema({
         type: Number,
     },
     Quantity:{
-        type:Number
+        type:Number,
     },
     Total_price:{
-        type:Number
+        type:Number,
     },
     Address: {
         type: String,

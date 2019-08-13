@@ -21,7 +21,7 @@ exports.Getorder=(req, res)=> {
     })
 }
 exports.Deliver=(req, res)=> {
-    console.log(req)
+    console.log("deliver")
     Order.remove({ _id: req.params.id }, (error, data) => {
         if (error) { res.json(error) }
         res.json(data)
