@@ -1,15 +1,24 @@
-import { Login,userSignup } from '../Controller/usercontroller'
+import { Login,getAllSignin,userSignup } from '../Controller/usercontroller'
 import { AdminLogin,AdminSignup } from '../Controller/Admincontroller'
 import {AddCart,getCart,deletecart,updateCart} from '../Controller/Cartcontroller'
 import {Addproduct,Getproduct} from '../Controller/Productcontroller'
 import {Addorder,Getorder,Deliver} from '../Controller/Ordercontroller'
+var isAuth=require('../midleware/isAuth');
+
 const routes = (app) => {
 // to user registor
 app.route('/signup')
 .post(userSignup)
 // to user login 
+// app.route('/Login')
+// .post(Login)   
+
 app.route('/Login')
-.post(Login)    
+.post(Login)
+.get(isAuth,getAllSignin)
+
+
+
 // to Admin registor
 app.route('/Adminsignup')
 .post(AdminSignup)
